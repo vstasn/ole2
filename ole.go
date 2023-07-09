@@ -18,7 +18,7 @@ type Ole struct {
 	reader   io.ReadSeeker
 }
 
-func Open(reader io.ReadSeeker, charset string) (ole *Ole, err error) {
+func Open(reader io.ReadSeeker) (ole *Ole, err error) {
 	var header *Header
 	var hbts = make([]byte, 512)
 	reader.Read(hbts)
